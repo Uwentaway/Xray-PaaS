@@ -20,5 +20,5 @@ RUN wget https://github.com/XTLS/Xray-core/releases/download/v24.10.31/Xray-linu
 COPY  config.json ./
 USER 10014
 EXPOSE 10086
-ENTRYPOINT [ "/usr/bin/bash", "./xray" ]
+ENTRYPOINT [ "/bin/sh -c","./xray" ]
 
