@@ -9,6 +9,13 @@
 # ENTRYPOINT [ "/usr/bin/bash", "entrypoint.sh" ]
 
 
-FROM aautoops/ss:ssh2
-USER 10014
-ENTRYPOINT [ "/usr/bin/bash", "entrypoint.sh" ]
+# FROM aautoops/ss:ssh2
+# USER 10014
+# ENTRYPOINT [ "/usr/bin/bash", "entrypoint.sh" ]
+
+FROM ubuntu
+WORKDIR /app
+RUN wget https://github.com/XTLS/Xray-core/releases/download/v24.10.31/Xray-linux-64.zip --no-check-certificate && unzip Xray-linux-64.zip 
+COPY  config.json ./
+ENTRYPOINT [ "/usr/bin/bash", "./xray" ]
+
