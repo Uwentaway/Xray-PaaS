@@ -24,5 +24,5 @@ RUN sed -i '/^user nginx;/d' /etc/nginx/nginx.conf
 RUN chown -R 10014:10014 /var/cache/nginx /var/run /var/log/nginx
 USER 10014
 EXPOSE 80 10086
-ENTRYPOINT ["./entrypoint.sh"]
+ENTRYPOINT ["/bin/bash","-c","./entrypoint.sh"]
 
