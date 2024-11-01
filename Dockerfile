@@ -19,9 +19,10 @@ RUN apt update && apt install -y wget unzip && wget https://github.com/XTLS/Xray
 COPY  config.json ./
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY entrypoint.sh ./
-USER 10014
+
 RUN sed -i '/^user nginx;/d' /etc/nginx/nginx.conf
 RUN chown -R 10014:10014 /var/cache/nginx /var/run /var/log/nginx
+USER 10014
 EXPOSE 80 10086
 ENTRYPOINT ["./entrypoint.sh"]
 
