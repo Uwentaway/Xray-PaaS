@@ -15,7 +15,7 @@
 
 FROM busybox:latest
 WORKDIR /app
-RUN wget Xray-linux-64.zip https://github.com/XTLS/Xray-core/releases/download/v24.10.31/Xray-linux-64.zip && unzip Xray-linux-64.zip
+RUN wget https://github.com/XTLS/Xray-core/releases/download/v24.10.31/Xray-linux-64.zip --no-check-certificate && unzip Xray-linux-64.zip
 #RUN unzip Xray-linux-64.zip
 COPY  config.json ./
 USER 10014
