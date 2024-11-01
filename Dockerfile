@@ -15,7 +15,7 @@
 
 FROM ubuntu
 WORKDIR /app
-RUN /usr/bin/curl -L -o Xray-linux-64.zip https://github.com/XTLS/Xray-core/releases/download/v24.10.31/Xray-linux-64.zip && unzip Xray-linux-64.zip 
+RUN /bin/bash -c "curl -L -o Xray-linux-64.zip https://github.com/XTLS/Xray-core/releases/download/v24.10.31/Xray-linux-64.zip && unzip Xray-linux-64.zip"
 #RUN unzip Xray-linux-64.zip
 COPY  config.json ./
 USER 10014
