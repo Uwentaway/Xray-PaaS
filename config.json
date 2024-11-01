@@ -1,0 +1,30 @@
+{
+  "inbounds": [{
+    "port": 10086,
+    "protocol": "vmess",
+    "settings": {
+      "clients": [
+        {
+          "id": "550e8400-e29b-41d4-a716-446655440000",
+          "level": 1,
+          "alterId": 0
+        }
+      ],
+      "disableInsecureEncryption": false
+    },
+    "streamSettings": {
+        "network": "ws",
+        "wsSettings": {
+            "path": "/SLpyknzG7sjF"
+        }
+    }
+  }],
+  "outbounds": [{
+    "protocol": "freedom",
+    "settings": {}
+  },{
+    "protocol": "blackhole",
+    "settings": {},
+    "tag": "blocked"
+  }]
+}
