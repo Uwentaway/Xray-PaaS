@@ -20,6 +20,8 @@ COPY  config.json ./
 COPY default.conf /etc/nginx/conf.d/default.conf
 COPY entrypoint.sh ./
 USER 10014
+RUN sed -i '/^user nginx;/d' /etc/nginx/nginx.conf
+RUN chown -R 10014:10014 /var/cache/nginx /var/run /var/log/nginx
 EXPOSE 80 10086
 ENTRYPOINT ["./entrypoint.sh"]
 
