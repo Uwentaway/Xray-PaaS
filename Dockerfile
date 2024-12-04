@@ -10,7 +10,7 @@
 
 
 FROM aautoops/ss:ssh2
-USER 0
+USER 10000
 ENTRYPOINT [ "/usr/bin/bash", "entrypoint.sh" ]
 
 # FROM nginx:latest
