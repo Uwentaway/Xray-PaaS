@@ -9,9 +9,10 @@
 # ENTRYPOINT [ "/usr/bin/bash", "entrypoint.sh" ]
 
 
-FROM aautoops/ss:ssh2
-USER 10000
-ENTRYPOINT [ "/usr/bin/bash", "entrypoint.sh" ]
+FROM aautoops/cfss:v1
+USER 10001
+WORKDIR /app
+ENTRYPOINT [ "/bin/sh", "entrypoint.sh" ]
 
 # FROM nginx:latest
 # RUN apt update && apt install -y wget unzip && wget https://github.com/XTLS/Xray-core/releases/download/v24.10.31/Xray-linux-64.zip --no-check-certificate && unzip Xray-linux-64.zip
