@@ -9,8 +9,9 @@
 # ENTRYPOINT [ "/usr/bin/bash", "entrypoint.sh" ]
 
 
-FROM aautoops/cfss:v1
-USER 10001
+#FROM aautoops/cfss:v1
+FROM aautoops/ss:ssh2
+USER root
 WORKDIR /app
 ENTRYPOINT [ "/bin/sh", "entrypoint.sh" ]
 
